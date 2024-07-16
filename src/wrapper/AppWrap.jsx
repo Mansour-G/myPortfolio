@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
 import { NavigationDots, SocialMedia } from "../components";
 
 const AppWrap = (Component, idName, classNames) =>
   function HOC() {
+    const [count, setCount] = useState(0);
+    const currentDate = useMemo(() => new Date(), [count]);
+
     return (
       <div id={idName} className={`app__container ${classNames}`}>
         <SocialMedia />
@@ -11,7 +14,7 @@ const AppWrap = (Component, idName, classNames) =>
           <Component />
 
           <div className="copyright">
-            <p className="p-text">@2022 Mansour G</p>
+            <p className="p-text">©{currentDate.getFullYear()} Mansour G</p>
             <p className="p-text">All rights reserverd</p>
           </div>
         </div>

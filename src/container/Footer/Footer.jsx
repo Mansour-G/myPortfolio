@@ -59,7 +59,7 @@ const Footer = () => {
         <div className="app__footer-card">
           <img src={images.email} alt="email" />
           <a href="mailto:maansuur123@gmail.com" className="p-text">
-            Hello at mg@dev.com{" "}
+            Hello at mansourg@dev.com{" "}
           </a>
         </div>
         <div className="app__footer-card">
@@ -105,11 +105,7 @@ const Footer = () => {
                 {...register("message", { required: true })}
               />
             </div>
-            <button
-              type="button"
-              className="p-text"
-              onClick={handleSubmitForm}
-            >
+            <button type="button" className="p-text" onClick={handleSubmitForm}>
               {loading ? "Sending" : "Send Message"}
             </button>
           </form>
